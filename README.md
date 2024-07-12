@@ -9,12 +9,13 @@ La Cafetería Nanacao está abriendo una nueva sucursal y ha solicitado el desar
 ## Requerimientos
 
 1. **Testea que la ruta GET /cafes devuelve un status code 200 y el tipo de dato recibido es un arreglo con por lo menos 1 objeto.**
-it("GET /cafes devuelve un status code 200 y el tipo de dato recibido es un arreglo con por lo menos 1 objeto", async () => {
-    const response = await request(server).get("/cafes");
-    expect(response.status).toBe(200);
-    expect(Array.isArray(response.body)).toBe(true);
-    expect(response.body.length).toBeGreaterThan(0);
-});
+   ```javascript
+   it("GET /cafes devuelve un status code 200 y el tipo de dato recibido es un arreglo con por lo menos 1 objeto", async () => {
+       const response = await request(server).get("/cafes");
+       expect(response.status).toBe(200);
+       expect(Array.isArray(response.body)).toBe(true);
+       expect(response.body.length).toBeGreaterThan(0);
+   });
 
 2. **Comprueba que se obtiene un código 404 al intentar eliminar un café con un id que no existe.**
 it("DELETE /cafes/:id devuelve un código 404 al intentar eliminar un café con un id que no existe", async () => {
