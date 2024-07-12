@@ -18,7 +18,7 @@ La Cafetería Nanacao está abriendo una nueva sucursal y ha solicitado el desar
    });
 
 2. **Comprueba que se obtiene un código 404 al intentar eliminar un café con un id que no existe.**
-   ```javascript
+```javascript
 it("DELETE /cafes/:id devuelve un código 404 al intentar eliminar un café con un id que no existe", async () => {
     const fakeId = 999;
     const response = await request(server).delete(`/cafes/${fakeId}`).set("Authorization", "Bearer token");
@@ -26,7 +26,7 @@ it("DELETE /cafes/:id devuelve un código 404 al intentar eliminar un café con 
 });
 
 3. **Prueba que la ruta POST /cafes agrega un nuevo café y devuelve un código 201.**
-   ```javascript
+```javascript
 it("POST /cafes agrega un nuevo café y devuelve un código 201", async () => {
     const nuevoCafe = {
         id: 5,
@@ -38,7 +38,7 @@ it("POST /cafes agrega un nuevo café y devuelve un código 201", async () => {
 });
 
 4. **Prueba que la ruta PUT /cafes devuelve un status code 400 si intentas actualizar un café enviando un id en los parámetros que sea diferente al id dentro del payload.**
-   ```javascript
+```javascript
 it("PUT /cafes/:id devuelve un status code 400 si intentas actualizar un café enviando un id en los parámetros que sea diferente al id dentro del payload", async () => {
     const cafeActualizado = {
         id: 6,
